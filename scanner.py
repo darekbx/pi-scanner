@@ -13,7 +13,7 @@ class Scanner():
 
 	def runScan(self):
 		count = 0
-		while (count < 1):
+		while (count < 10):
 			start = Utils().getMillis()
 			command = self.commandPi if self.isForPI else self.commandCosmose
 			output = os.popen(command).read()

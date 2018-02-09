@@ -13,7 +13,7 @@ class Scanner():
 
 			output = os.popen(self.command).read()
 			print self.parseOutput(output)
-			
+
 			self.printTimeDiff(start)
 			count = count + 1
 
@@ -25,4 +25,4 @@ class Scanner():
 
 	def printTimeDiff(self, start):
 		difference = self.getMillis() - start
-		print "%dms" % difference 
+		print "Scanning took %dms" % difference 

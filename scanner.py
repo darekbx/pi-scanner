@@ -10,10 +10,10 @@ class Scanner():
 		count = 0
 		while (count < 2):
 			start = self.getMillis()
-			
+
 			output = os.popen(self.command).read()
 			print self.parseOutput(output)
-
+			
 			self.printTimeDiff(start)
 			count = count + 1
 

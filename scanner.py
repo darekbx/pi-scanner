@@ -7,7 +7,7 @@ class Scanner():
 
 	searchArguments = "BSS|SSID|freq|signal"
 	commandCosmose = "sudo iw dev wlp4s0 scan | egrep \"" + searchArguments + "\""
-	commandPi = "sudo iw dev wlan0 scan freq 2412 | egrep \"" + searchArguments + "\""
+	commandPi = "sudo iw dev wlan0 scan | egrep \"" + searchArguments + "\""
 	
 	isForPI = True
 
@@ -32,6 +32,7 @@ class Scanner():
 		print "Scanning took %dms" % difference 
 
 '''
+scanning witch channel by frequency: sudo iw dev wlan0 scan freq 2412
 
                         * 2412 MHz [1] (20.0 dBm)
                         * 2417 MHz [2] (20.0 dBm)

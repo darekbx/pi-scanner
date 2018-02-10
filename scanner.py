@@ -7,7 +7,7 @@ class Scanner():
 
 	searchArguments = "BSS|SSID|freq|signal"
 	commandCosmose = "sudo iw dev wlp4s0 scan | egrep \"" + searchArguments + "\""
-	commandPi = "sudo iw dev wlan0 scan | egrep \"" + searchArguments + "\" freq 2412"
+	commandPi = "sudo iw dev wlan0 scan freq 2412 | egrep \"" + searchArguments + "\""
 	
 	isForPI = True
 

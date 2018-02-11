@@ -32,14 +32,11 @@ class Scanner():
 				if sameCount == 0:
 					uniqueSamplesCount.append(s)
 			
-					
-				#print sample.toString()
-				
 
 			#self.printTimeDiff(start)
 			fingerprintCount = fingerprintCount + 1
 			
-	print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
+		print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
 
 	def printTimeDiff(self, start):
 		difference = Utils().getMillis() - start

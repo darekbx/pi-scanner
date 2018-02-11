@@ -12,10 +12,10 @@ class Scanner():
 	isForPI = True
 
 	def runScan(self):
+		start = Utils().getMillis()
 		fingerprintCount = 0
 		uniqueSamples = []
-		while (fingerprintCount < 1):
-			start = Utils().getMillis()
+		while (fingerprintCount < 30):
 			command = self.commandPi if self.isForPI else self.commandCosmose
 			output = os.popen(command).read()
 
@@ -33,10 +33,10 @@ class Scanner():
 					uniqueSamples.append(s)
 			
 
-			#self.printTimeDiff(start)
+			self.printTimeDiff(start)
 			fingerprintCount = fingerprintCount + 1
 			
-		print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
+			print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
 
 	def printTimeDiff(self, start):
 		difference = Utils().getMillis() - start

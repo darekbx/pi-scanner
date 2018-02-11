@@ -30,7 +30,7 @@ class Scanner():
 					if s.bss == c.bss and s.ssid == c.ssid and s.freq == c.freq and s.signal == c.signal:
 						sameCount = sameCount + 1
 				if sameCount == 0:
-					uniqueSamplesCount.append(s)
+					uniqueSamples.append(s)
 			
 
 			#self.printTimeDiff(start)

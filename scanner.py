@@ -14,7 +14,7 @@ class Scanner():
 	def runScan(self):
 		fingerprintCount = 0
 		uniqueSamples = []
-		while (count < 1):
+		while (fingerprintCount < 1):
 			start = Utils().getMillis()
 			command = self.commandPi if self.isForPI else self.commandCosmose
 			output = os.popen(command).read()

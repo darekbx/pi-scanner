@@ -1,5 +1,5 @@
 from scanner import Scanner
-from bluepy.bluepy.btle import UUID, Peripheral
+from bluepy.btle import UUID, Peripheral
 
 temp_uuid = UUID(0x2221)
 p = Peripheral("A8:96:75:32:9D:EB", "random")

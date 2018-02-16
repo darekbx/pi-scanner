@@ -6,8 +6,10 @@ adapter = pygatt.BGAPIBackend()
 try:
 	adapter.start()
 	device = adapter.connect('A8:96:75:32:9D:EB')
+	print "after device"
 	while 1:
-		value = device.char_read("00001105-0000-1000-8000-00805f9b34fb")
+		print "waiting for read..."
+		value = device.char_read("00002a00-0000-1000-8000-00805f9b34fb")
 		print str(val)
 		time.sleep(1)
 

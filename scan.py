@@ -1,19 +1,22 @@
 from scanner import Scanner
-from bluepy.btle import UUID, Peripheral
+import pygatt
 
 temp_uuid = UUID(0x2221)
 p = Peripheral("A8:96:75:32:9D:EB", "random")
 
-try:
-	ch = p.getCharacteristics(uuid=temp_uuid)[0]
-	if (ch.supportsRead()):
-		while 1:
-			value = ch.read()
-			print str(val)
+adapter = pygatt.BGAPIBackend()
 
-			#scanner = Scanner()
-			#scanner.runScan()
-			time.sleep(1)
+try:
+    adapter.start()
+    device = adapter.connect('A8:96:75:32:9D:EB')
+
+	while 1:
+    	value = device.char_read("00001105-0000-1000-8000-00805f9b34fb")
+		print str(val)
+		time.sleep(1)
 
 finally:
     p.disconnect()
+
+#scanner = Scanner()
+#scanner.runScan()

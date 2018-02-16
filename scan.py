@@ -1,7 +1,7 @@
 from scanner import Scanner
 import pygatt
 
-adapter = pygatt.BGAPIBackend()
+adapter = pygatt.GATTToolBackend()
 
 try:
 	adapter.start()

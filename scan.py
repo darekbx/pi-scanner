@@ -1,5 +1,5 @@
 from scanner import Scanner
-import pygatt
+""" import pygatt
 
 adapter = pygatt.GATTToolBackend()
 
@@ -14,7 +14,7 @@ try:
 		time.sleep(1)
 
 finally:
-    adapter.stop()
+    adapter.stop() """
 
-#scanner = Scanner()
-#scanner.runScan()
+scanner = Scanner()
+scanner.runScan()

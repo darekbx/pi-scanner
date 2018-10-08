@@ -13,7 +13,7 @@ class Scanner():
 	commandCosmose = "sudo iw dev wlp4s0 scan | egrep \"" + searchArguments + "\""
 	commandPi = "sudo iw dev wlan0 scan | egrep \"" + searchArguments + "\""
 	
-	isForPI = False
+	isForPI = True
 
 	def runScan(self):
 		fingerprintCount = 0

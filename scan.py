@@ -4,5 +4,5 @@ import base64
 
 scanner = Scanner()
 resultJson = scanner.runScan()
-
-print base64.b64encode(resultJson)
+zipped = zlib.compress(resultJson)
+print base64.b64encode(zipped)

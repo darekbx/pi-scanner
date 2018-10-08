@@ -16,5 +16,6 @@ try:
 finally:
     adapter.stop() """
 
-scanner = Scanner()
-scanner.runScan()
+print "123456789012345678abcdefghi"
+#scanner = Scanner()
+#scanner.runScan()

@@ -1,4 +1,5 @@
 import os
+import json
 
 from utils import Utils
 from resultsParser import ResultsParser
@@ -10,7 +11,7 @@ class Scanner():
 	5660,5680,5700,5720,5745,5765,5785,5805,5825]
 	searchArguments = "BSS|SSID|freq|signal"
 	commandCosmose = "sudo iw dev wlp4s0 scan | egrep \"" + searchArguments + "\""
-	commandPi = "sudo iw dev wlan0 scan freq | egrep \"" + searchArguments + "\""
+	commandPi = "sudo iw dev wlan0 scan | egrep \"" + searchArguments + "\""
 	
 	isForPI = True
 
@@ -34,9 +35,10 @@ class Scanner():
 					uniqueSamples.append(s)
 			
 			fingerprintCount = fingerprintCount + 1
-				
-			print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
-			self.printTimeDiff(start)
+			
+			print json.dumps([ob.__dict__ for ob in signalSamples])
+			#print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))
+			#self.printTimeDiff(start)
 
 	def printTimeDiff(self, start):
 		difference = Utils().getMillis() - start

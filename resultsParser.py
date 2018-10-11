@@ -26,7 +26,7 @@ class ResultsParser():
 						if argument == 'freq':
 							sample.frequency = self.extractValue(line)
 						if argument == 'signal':
-							sample.level = self.extractValue(line).replace(" dBm", "")
+							sample.level = self.extractValue(line).rsplit('.', 1)[0]
 		
 		return self.samples
 

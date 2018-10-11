@@ -1,11 +1,11 @@
 class SignalSample():
-	bss = ''
+	bssid = ''
 	ssid = ''
-	freq = ''
-	signal = ''
+	frequency = ''
+	level = ''
 
 	def __init__(self):
 		return
 
 	def toString(self):
-		return "%s\n%s\n%s\n%s\n" % (self.bss, self.ssid, self.freq, self.signal) 
+		return "%s\n%s\n%s\n%s\n" % (self.bssid, self.ssid, self.frfrequencyeq, self.level) 

@@ -24,17 +24,17 @@ class Scanner():
 			output = os.popen(command.format()).read()
 
 			signalSamples = ResultsParser().parseOutput(output, self.searchArguments)
-			uniqueSamplesCount = 0
+			# uniqueSamplesCount = 0
 			
-			for s in signalSamples:
-				sameCount = 0
-				for c in uniqueSamples:
-					if s.bss == c.bss and s.ssid == c.ssid and s.freq == c.freq and s.signal == c.signal:
-						sameCount = sameCount + 1
-				if sameCount == 0:
-					uniqueSamples.append(s)
+			# for s in signalSamples:
+			# 	sameCount = 0
+			# 	for c in uniqueSamples:
+			# 		if s.bssid == c.bssid and s.ssid == c.ssid and s.frequency == c.frequency and s.level == c.level:
+			# 			sameCount = sameCount + 1
+			# 	if sameCount == 0:
+			# 		uniqueSamples.append(s)
 			
-			fingerprintCount = fingerprintCount + 1
+			# fingerprintCount = fingerprintCount + 1
 			
 			return json.dumps([ob.__dict__ for ob in signalSamples])
 			#print "Fingerprints: %d, unique signal samples: %d" % (fingerprintCount, len(uniqueSamples))

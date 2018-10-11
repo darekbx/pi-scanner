@@ -22,17 +22,17 @@ class ResultsParser():
 					position = line.find(argument + ':')
 					if position >= 0:
 						if argument == 'SSID':
-							sample.ssid = self.extractValue(line)
+							sample.bssid = self.extractValue(line)
 						if argument == 'freq':
-							sample.freq = self.extractValue(line)
+							sample.frequency = self.extractValue(line)
 						if argument == 'signal':
-							sample.signal = self.extractValue(line)
+							sample.level = self.extractValue(line)
 		
 		return self.samples
 
 	def createSignalSample(self, line):
 		sample = SignalSample()
-		sample.bss = self.extractValue(line)
+		sample.bssid = self.extractValue(line)
 		self.samples.append(sample)
 		return sample
 

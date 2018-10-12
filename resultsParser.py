@@ -21,8 +21,10 @@ class ResultsParser():
 					line = line.replace('\t', '')
 					position = line.find(argument + ':')
 					if position >= 0:
-						if argument == 'SSID':
+						if argument == 'BSS':
 							sample.bssid = self.extractValue(line)
+						if argument == 'SSID':
+							sample.ssid = self.extractValue(line)
 						if argument == 'freq':
 							sample.frequency = self.extractValue(line)
 						if argument == 'signal':

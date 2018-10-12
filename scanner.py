@@ -10,7 +10,7 @@ class Scanner():
 	commandCosmose = "sudo iw dev wlp4s0 scan | egrep \"" + searchArguments + "\""
 	commandPi = "sudo iw dev wlan0 scan | egrep \"" + searchArguments + "\""
 	
-	isForPI = True
+	isForPI = False
 
 	def runScan(self):
 		command = self.commandPi if self.isForPI else self.commandCosmose

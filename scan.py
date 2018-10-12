@@ -5,6 +5,7 @@ import StringIO
 
 scanner = Scanner()
 resultJson = scanner.runScan()
+print resultJson
 out = StringIO.StringIO()
 with gzip.GzipFile(fileobj=out, mode="w") as f:
   f.write(resultJson)
